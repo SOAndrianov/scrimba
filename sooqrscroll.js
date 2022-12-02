@@ -1,3 +1,4 @@
+$jQ('.sooqrSearchContainer').addClass('test');
 $jQ('.sooqrSearchContainer').removeAttr('style');
 $jQ('sooqrSearchContainer').attr('style','top:50px;position:absolute;margin-left:auto;margin-right:auto;right:0;left:0;height:100%;');
 $jQ('sooqrSearchResultsContainer').attr('style','height:100%;');
