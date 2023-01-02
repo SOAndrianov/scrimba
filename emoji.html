@@ -42,15 +42,13 @@
             }
         </style>
         <script type="text/javascript">
-            let fighters = ["🐉", "🐥", "🐊","💩", "🦍", "🐢", "🐩", "🦭", "🦀", "🐝", "🤖", "🐘", "🐸", "🕷","🐆", "🦕", "🦁"]
-
-            let stageEl = document.getElementById("stage")
-            let fightButton = document.getElementById("fightButton")
-            fightButton.addEventListener("click", function() {  
+            function fightButton() {  
+                let fighters = ["🐉", "🐥", "🐊","💩", "🦍", "🐢", "🐩", "🦭", "🦀", "🐝", "🤖", "🐘", "🐸", "🕷","🐆", "🦕", "🦁"]
+                let stageEl = document.getElementById("stage")
                 let i = randomNumber()
                 let e = randomNumber()
                 stageEl.textContent = fighters[i] + " VS " + fighters[e]
-            })
+            }
             function randomNumber() {
                 let number = Math.floor(Math.random() * 17)
                 return number
@@ -60,6 +58,6 @@
     <body>
         <h1>Emoji<br>Fighter</h1>
         <div id="stage"></div>
-        <button id="fightButton">Pick Fighters!</button>
+        <button onclick="fightButton()">Pick Fighters!</button>
     </body>
 </html>
