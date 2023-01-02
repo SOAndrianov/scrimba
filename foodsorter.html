@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <style type="text/css">
+            body {
+                padding: 40px;
+                background: whitesmoke;
+                text-align: center;
+            }
+
+            #apple-shelf {
+                background: lightcoral;
+                border-radius: 10px;
+                height: 30px;
+                margin: 10px 0;
+            }
+
+            #orange-shelf {
+                background: lightsalmon;
+                border-radius: 10px;
+                height: 30px;
+            }
+            button {
+                border:1px solid lightcoral;
+                border-radius:3px;
+                padding:5px;
+                margin-top:20px;
+                cursor:pointer;
+                background-color:lightsalmon;
+                color:white;
+                font-weight: bold;
+            }
+            button:hover {
+                background:salmon;
+                border-color:coral
+            }
+        </style>
+        <script type="text/javascript">
+            let fruitButton = document.querySelector("#add");
+            
+            function addFruit() {
+                let fruit = ["🍎", "🍊"]
+                let appleShelf = document.getElementById("apple-shelf")
+                let orangeShelf = document.getElementById("orange-shelf")
+                randomFruit = Math.floor(Math.random() * fruit.length)
+                if (fruit[randomFruit] === "🍎") {
+                    appleShelf.textContent += fruit[randomFruit]
+                }
+                else {
+                    orangeShelf.textContent += fruit[randomFruit]
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="apple-shelf"></div>  
+        <div id="orange-shelf"></div>
+        <button id="add" onclick="addFruit()">Add random fruit</button>
+    </body>
+</html>
