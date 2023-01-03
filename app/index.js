@@ -4,11 +4,21 @@ const inputBtn = document.getElementById("input-btn")
 const clearBtn = document.getElementById("clear-btn")
 const ulEl = document.getElementById("ul-el")
 let leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )
+const tabBtn = document.getElementById("tab-btn")
 
 if (leadsFromLocalStorage) {
     myLeads = leadsFromLocalStorage
     render(myLeads)
 }
+
+tabBtn.addEventListener("click", function(){    
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+        myLeads.push(tabs[0].url)
+        localStorage.setItem("myLeads", JSON.stringify(myLeads) )
+        render(myLeads)
+    })
+})
+
 function addItem() {
     myLeads.push(inputEl.value)
     inputEl.value = ""
