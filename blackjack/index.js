@@ -12,6 +12,7 @@ let messageEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
 let playerEl = document.getElementById("player-el")
+let bg = document.getElementById("bg")
 
 function getRandomCard() {
     let randomNumber = Math.floor( Math.random()*13 ) + 1
@@ -19,8 +20,6 @@ function getRandomCard() {
         return 10
     } else if (randomNumber === 1 && sum < 11) {
         return 11
-    }else if (randomNumber === 1 && sum > 10) {
-        return 1
     }else {
         return randomNumber
     }
@@ -60,6 +59,9 @@ function renderGame() {
         message = "You lost!"
         isAlive = false
         player.chips -= 100
+    }
+    if (player.chips < 0) {
+        document.querySelector('#bg').setAttribute('class','red')
     }
     messageEl.textContent = message
     playerEl.textContent = player.name + ": $" + player.chips

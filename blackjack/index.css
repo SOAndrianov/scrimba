@@ -6,6 +6,9 @@ body {
     text-align: center;
 }
 
+.red {
+    background:darkred;
+}
 h1 {
     color: goldenrod;
 }
