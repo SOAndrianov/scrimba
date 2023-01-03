@@ -9,11 +9,11 @@ body {
     width:50%;
     min-width: 500px;
     display:block;
+    box-sizing: border-box;
     
 }
 header {
-    width: 50%;
-    min-width: 500px;
+    width: 100%;
     height: 285px;
     background: #6943FF;
     box-sizing: border-box;
