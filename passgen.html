@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Karla" rel="stylesheet">
+        <style type="text/css">
+            @import url('https://fonts.googleapis.com/css2?family=Karla');
+            body {
+                margin:0;
+                background-color:#1c1c1c;
+                color:#4ADF86;
+                font-family: 'Karla';
+            }
+
+            .white {
+                color:white;
+                display:block
+            }
+            #container {
+                width: 50%;
+                margin: 0 auto;
+                background-color: #1F2937;
+                padding: 1%;
+                display: block;
+                left: 0;
+                right: 0;
+                position: absolute;
+                margin-top: 1%;
+            }
+            button {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                padding: 9px 17px 9px 15px;
+                gap: 12px;
+                width: 191px;
+                height: 42px;
+                margin:5px;
+                background: #10B981;
+                /* shadow/sm */
+                cursor:pointer;
+                box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+                border-radius: 6px;
+                border:none;
+            }
+            h1 {
+                font-weight: 800;
+            }
+            p {
+                color:#D5D4D8;
+            }
+            #container >span {
+                background-color: #273549;
+                padding: 5px;
+                border-radius: 3px;
+                width: 213px;
+                display: inline-block;
+                margin: 5px;
+                height: 21px;
+                text-align: center;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div id="container">
+            <h1><span class="white">Generate</span> random password</h1>
+            <p>Never use an insecure password again.</p>
+            <span id="password-one"></span>
+            <span id="password-two"></span>
+            <button onclick="genPassword()">Generate password</button>
+        </div>
+    </body>
+    <script type="text/javascript">
+        const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9","~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?",
+        "/"];
+        var pass1El = document.getElementById('password-one');
+        var pass2El = document.getElementById('password-two');
+        function genPassword() {
+            pass1El.textContent = ""
+            pass2El.textContent = ""
+            for (let i = 0; i < 15; i++) {
+                let e = Math.floor(Math.random() * characters.length)
+                let f = Math.floor(Math.random() * characters.length)
+                console.log(characters[e])
+                //passEl.innerHTML += characters[e]
+                pass1El.textContent += characters[e]
+                pass2El.textContent += characters[f]
+            }
+        }
+    </script>
+</html>
