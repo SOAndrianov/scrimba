@@ -25,7 +25,8 @@ inputBtn.addEventListener("click", function() {
 })
 clearBtn.addEventListener("click", function() {
     localStorage.clear()
-    location.reload()
+    myLeads = []
+    renderLeads()
 });
 
 function renderLeads() {
