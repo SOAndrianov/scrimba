@@ -63,6 +63,9 @@ function renderGame() {
     if (player.chips < 0) {
         document.querySelector('#bg').setAttribute('class','red')
     }
+    else {
+        document.querySelector('#bg').setAttribute('class','green')
+    }
     messageEl.textContent = message
     playerEl.textContent = player.name + ": $" + player.chips
 }
