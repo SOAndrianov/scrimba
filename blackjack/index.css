@@ -9,6 +9,9 @@ body {
 .red {
     background:darkred;
 }
+.green {
+    background: green;
+}
 h1 {
     color: goldenrod;
 }
